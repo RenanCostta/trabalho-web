@@ -1,0 +1,257 @@
+:root {
+  --color-1: #161616;
+  --color-2: #e9dddd;
+  --color-3: #443a39;
+  --color-4: #2e2424;
+  --color-5: #3b3434;
+  --color-6: #615959;
+}
+
+* {
+  box-sizing: border-box;
+  text-rendering: geometricPrecision;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-1);
+  height: 100%;
+  width: 100%;
+  background-image: url("../Rsc/place.jpg");
+  background-size: 100%;
+  background-position-y: 5%;
+  background-repeat: no-repeat;
+  background-position: fixed;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+header {
+  background-color: var(--color-6);
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 16px;
+
+  ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    li {
+      transition: .25s ease;
+
+      &:not(.active, .login-button):hover {
+        transform: scale(1.05) rotate(8deg);
+      }
+
+      &.active a {
+        font-weight: bold;
+      }
+
+      a {
+        cursor: pointer;
+        padding: 8px;
+        font-size: 14px;
+        color: var(--color-2);
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.login-button {
+  display: block;
+  border-radius: 4px;
+  background-color: var(--color-5);
+
+  transition: .5s ease;
+
+  a {
+    display: inline-block;
+    padding: 4px 24px;
+    color: var(--color-2);
+    font-weight: bold;
+  }
+
+  &:hover {
+    background-color: var(--color-2);
+  }
+
+  &:hover a {
+    color: var(--color-5);
+  }
+}
+
+.searchbar-container {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+
+  input {
+    height: 100%;
+    padding: 4px 8px;
+
+
+    color: var(--color-3);
+    background-color: rgba(255, 255, 255, .7);
+    border: none;
+    border-radius: 0 5px 5px 0;
+    transition: .25s ease;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &:not(:placeholder-shown) {
+      background-color: rgba(255, 255, 255, .95);
+    }
+  }
+
+  ::-webkit-search-cancel-button{
+    appearance: none;
+    height: 10px;
+    width: 10px;
+    background-image: url("../Rsc/x.png");
+    background-size: 10px;
+  }
+
+  input:not(:placeholder-shown)+button,
+  input:focus+button,
+  input:hover+button {
+    background-color: rgba(255, 255, 255, .95);
+  }
+
+  button {
+    cursor: pointer;
+    padding: 0 8px 0 8px;
+    height: 100%;
+
+    color: var(--color-3);
+    background-color: rgba(255, 255, 255, .7);
+    border: none;
+    border-radius: 5px 0 0 5px;
+
+    transition: .25s ease;
+
+    i {
+      transition: .25s ease;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: var(--color-5) !important;
+
+      i {
+        color: #fff;
+        transform: scale(1.08);
+      }
+    }
+  }
+}
+
+/* Slideshow container */
+.slideshow-container {
+  width: auto;
+  position: relative;
+  margin: auto;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+.FocoHome {
+  position: absolute;
+  left: 0%;
+  top: 40%;
+  width: auto;
+  height: auto;
+  background-color: var(--color-3);
+  border-radius: 50px 50px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+
+  #lorem {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    position: relative;
+    margin-top: 25px;
+    width: 100%;
+    color: var(--color-2);
+    text-align: center;
+  }
+  #linguiça {
+    color: var(--color-2);
+    position: relative;
+    text-align: center;
+    margin: auto;
+    margin-top: 25px;
+  }
+
+  .imgs {
+    position: relative;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    height: auto;
+    margin-top: 5%;
+  }
+  
+  .exemploMoletons {
+    background-color: var(--color-4);
+    padding: 8px;
+    float: left;
+    width: 33.33%;
+    border-radius: 10px;
+  }
+
+  .conteudo {
+    background-color: var(--color-2);
+    padding: 16px;
+    border-radius: 10px;
+
+    h4 {
+      text-align: center;
+      font-size: 90%;
+      font-family: 'Times New Roman', Times, serif;
+    }
+    p {
+      text-align: center;
+      font-family: 'Times New Roman', Times, serif;
+    }
+  }
+
+  .moletom {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  footer {
+    background-color: var(--color-1);
+    margin-top: 5%;
+    width: 100%;
+    height: auto;
+    position: relative;
+    border-radius: 100px 100px 0 0;
+  
+    p{
+      color: var(--color-2);
+      text-align: center;
+      margin-top: 4%;
+      a{
+        text-decoration: none;
+        color: var(--color-2);
+      }
+    }
+
+  }
+}
